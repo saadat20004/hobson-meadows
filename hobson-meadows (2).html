@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hobson Meadows | Yurts, RV &amp; Tent Camping in Bow, Washington</title>
+<meta name="description" content="20 acres of open meadow, a private trout pond and four cozy glamping yurts in Bow, Washington. Book your yurt, RV or tent site at Hobson Meadows.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{
+  --pine:#1e2b19;
+  --meadow:#3d5a2a;
+  --grass:#6f8f3f;
+  --pond:#4f7884;
+  --gold:#e2a43b;
+  --gold-soft:#f6deae;
+  --berry:#8b3a5a;
+  --canvas:#f6f1e4;
+  --paper:#fffdf7;
+  --line:#e3dbc6;
+  --ink:#232a1f;
+  --muted:#5e6656;
+  --radius:22px;
+  --shadow:0 18px 40px -18px rgba(30,43,25,.35);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'Figtree',system-ui,sans-serif;color:var(--ink);background:var(--canvas);line-height:1.6;font-size:16.5px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',sans-serif;line-height:1.05;letter-spacing:-.02em}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1220px,100% - 40px);margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grass)}
+.sec{padding:96px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.sec-head h2{font-size:clamp(2.1rem,4.6vw,3.6rem);font-weight:800;color:var(--pine);margin-top:10px;max-width:15ch}
+.sec-head p{max-width:46ch;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:999px;border:0;font-weight:700;cursor:pointer;text-decoration:none;transition:transform .25s var(--ease),background .25s,box-shadow .25s,color .25s}
+.btn-gold{background:var(--gold);color:var(--pine);box-shadow:0 10px 24px -10px rgba(226,164,59,.9)}
+.btn-gold:hover{transform:translateY(-2px);background:#eeb24a}
+.btn-dark{background:var(--pine);color:var(--canvas)}
+.btn-dark:hover{transform:translateY(-2px);background:var(--meadow)}
+.btn-ghost{background:transparent;border:2px solid var(--line);color:var(--pine)}
+.btn-ghost:hover{border-color:var(--pine)}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,box-shadow .3s}
+.nav.solid{background:rgba(246,241,228,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:'Bricolage Grotesque';font-weight:800;font-size:1.3rem;color:var(--pine)}
+.logo i{width:38px;height:38px;border-radius:12px;background:var(--meadow);color:var(--gold-soft);display:grid;place-items:center;font-size:1rem}
+.nav-links{display:flex;gap:30px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;font-weight:600;color:var(--pine);position:relative;padding:4px 0}
+.nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--gold);transition:width .3s var(--ease)}
+.nav-links a:not(.btn):hover::after{width:100%}
+.nav-links .btn{padding:11px 20px;color:var(--pine)}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:0;background:var(--pine);color:var(--canvas);cursor:pointer;font-size:1.1rem}
+
+/* HERO */
+.hero{padding:104px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:22px;align-items:stretch}
+.hero-photo{position:relative;border-radius:var(--radius);overflow:hidden;min-height:620px;box-shadow:var(--shadow)}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:slowzoom 18s ease-out forwards}
+@keyframes slowzoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(20,30,15,.7))}
+.hero-tag{position:absolute;left:36px;bottom:32px;z-index:2;color:#fff;display:flex;gap:10px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);font-weight:600;font-size:.9rem}
+.chip i{color:var(--gold-soft)}
+.hero-side{display:flex;flex-direction:column;gap:22px}
+.hero-copy{background:var(--paper);border-radius:var(--radius);padding:36px 34px;border:1px solid var(--line)}
+.hero-copy h1{font-size:clamp(2.8rem,5.4vw,4.6rem);font-weight:800;color:var(--pine);margin:12px 0 16px}
+.hero-copy h1 span{color:var(--grass)}
+.hero-copy p{color:var(--muted);font-size:1.06rem}
+.rating{display:flex;align-items:center;gap:12px;margin-top:20px;flex-wrap:wrap}
+.rating b{font-family:'Bricolage Grotesque';font-size:1.7rem;color:var(--pine)}
+.rating .stars{color:var(--gold)}
+.rating small{color:var(--muted);font-weight:600}
+.quick{background:var(--pine);color:var(--canvas);border-radius:var(--radius);padding:26px;display:grid;gap:14px}
+.quick h3{font-size:1.3rem;display:flex;align-items:center;justify-content:space-between}
+.quick h3 small{font-family:'Figtree';font-size:.88rem;font-weight:600;color:var(--gold-soft)}
+.quick-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.qfield{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:9px 13px;transition:border-color .2s}
+.qfield:focus-within{border-color:var(--gold)}
+.qfield label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b9c4a8}
+.qfield input,.qfield select{width:100%;background:transparent;border:0;color:var(--canvas);font-weight:600;padding:2px 0;outline:none;color-scheme:dark}
+.qfield select option{color:var(--ink)}
+.quick .btn{width:100%}
+
+/* FACTS */
+.facts{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:22px}
+.fact{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;gap:14px;align-items:center;transition:transform .3s var(--ease),border-color .3s}
+.fact:hover{transform:translateY(-4px);border-color:var(--grass)}
+.fact i{width:44px;height:44px;flex:none;border-radius:13px;display:grid;place-items:center;background:#e8eedb;color:var(--meadow);font-size:1.05rem}
+.fact b{display:block;font-family:'Bricolage Grotesque';font-size:1.1rem;color:var(--pine);line-height:1.15}
+.fact span{font-size:.86rem;color:var(--muted)}
+
+/* STAYS */
+.stays{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tabs{display:inline-flex;gap:6px;padding:6px;background:var(--canvas);border:1px solid var(--line);border-radius:999px;flex-wrap:wrap}
+.tab{border:0;background:transparent;padding:11px 20px;border-radius:999px;font-weight:700;cursor:pointer;color:var(--muted);display:flex;gap:8px;align-items:center;transition:background .25s,color .25s}
+.tab .n{font-size:.75rem;background:var(--line);color:var(--pine);border-radius:999px;padding:1px 8px}
+.tab[aria-selected="true"]{background:var(--pine);color:var(--canvas)}
+.tab[aria-selected="true"] .n{background:var(--gold);color:var(--pine)}
+.tab-intro{margin:26px 0 24px;color:var(--muted);max-width:70ch}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}
+.card{background:var(--canvas);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s;animation:rise .5s var(--ease) both}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.card-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:#d9d3bf}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.card:hover .card-img img{transform:scale(1.07)}
+.badge{position:absolute;top:14px;left:14px;background:var(--paper);color:var(--pine);font-weight:700;font-size:.8rem;border-radius:999px;padding:6px 12px;display:flex;gap:6px;align-items:center}
+.badge i{color:var(--gold)}
+.badge.pet{left:auto;right:14px;background:var(--meadow);color:#fff}
+.badge.pet i{color:var(--gold-soft)}
+.card-body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card-body h3{font-size:1.35rem;color:var(--pine)}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
+.meta span{font-size:.84rem;font-weight:600;color:var(--muted);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:5px 10px;display:flex;gap:6px;align-items:center}
+.meta i{color:var(--grass)}
+.card-body p{font-size:.93rem;color:var(--muted)}
+.card .btn{margin-top:auto;padding:12px 18px;font-size:.95rem}
+
+/* GALLERY */
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px}
+.tile{position:relative;border:0;padding:0;border-radius:18px;overflow:hidden;cursor:zoom-in;background:#d9d3bf}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease),filter .4s}
+.tile:hover img{transform:scale(1.06);filter:brightness(.88)}
+.tile figcaption{position:absolute;left:14px;bottom:12px;right:14px;color:#fff;font-weight:600;font-size:.9rem;text-align:left;opacity:0;transform:translateY(8px);transition:.35s var(--ease);text-shadow:0 2px 10px rgba(0,0,0,.5)}
+.tile:hover figcaption,.tile:focus-visible figcaption{opacity:1;transform:none}
+.tile.big{grid-column:span 2;grid-row:span 2}
+.tile.tall{grid-row:span 2}
+.tile.wide{grid-column:span 2}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(14,20,11,.94);display:none;align-items:center;justify-content:center;padding:60px 70px}
+.lightbox.open{display:flex;animation:fade .3s}
+@keyframes fade{from{opacity:0}}
+.lightbox img{max-height:82vh;max-width:100%;border-radius:16px;object-fit:contain}
+.lb-cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#e8e2d0;font-weight:600}
+.lb-btn{position:absolute;width:52px;height:52px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font-size:1.2rem;cursor:pointer;transition:background .2s}
+.lb-btn:hover{background:var(--gold);color:var(--pine)}
+.lb-prev{left:16px;top:50%;transform:translateY(-50%)}
+.lb-next{right:16px;top:50%;transform:translateY(-50%)}
+.lb-close{top:16px;right:16px}
+
+/* LIFE */
+.life{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.life-photos{position:relative;height:560px}
+.life-photos img{position:absolute;object-fit:cover;border-radius:24px;box-shadow:var(--shadow)}
+.life-photos img:nth-child(1){left:0;top:0;width:72%;height:76%}
+.life-photos img:nth-child(2){right:0;bottom:0;width:52%;height:52%;border:8px solid var(--canvas)}
+.sticker{position:absolute;left:18px;bottom:30px;background:var(--gold);color:var(--pine);border-radius:50%;width:132px;height:132px;display:grid;place-items:center;text-align:center;font-family:'Bricolage Grotesque';font-weight:800;line-height:1.1;font-size:1rem;transform:rotate(-8deg);box-shadow:var(--shadow)}
+.sticker i{display:block;font-size:1.4rem;margin-bottom:4px}
+.amen{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.amen div{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:16px;background:var(--paper);border:1px solid var(--line);transition:border-color .25s,transform .25s var(--ease)}
+.amen div:hover{border-color:var(--pond);transform:translateX(4px)}
+.amen i{color:var(--pond);font-size:1.15rem;margin-top:3px;width:22px;text-align:center}
+.amen b{display:block;color:var(--pine)}
+.amen small{color:var(--muted)}
+
+/* HOST */
+.host{background:var(--meadow);color:var(--canvas);border-radius:36px;padding:56px;display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center;position:relative;overflow:hidden}
+.host::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(226,164,59,.14);right:-120px;top:-160px}
+.host-av{width:150px;height:150px;border-radius:50%;object-fit:cover;border:6px solid var(--gold-soft);background:#cbd4b8}
+.host h2{font-size:clamp(2rem,3.6vw,2.8rem);margin:8px 0 12px}
+.host .eyebrow{color:var(--gold-soft)}
+.host p{color:#dfe6cf;max-width:60ch}
+.dogs{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.dogs span{background:rgba(255,255,255,.12);border-radius:999px;padding:8px 14px;font-weight:600;font-size:.9rem}
+.dogs i{color:var(--gold-soft);margin-right:6px}
+.host-stats{display:grid;gap:12px;position:relative}
+.host-stats div{background:rgba(0,0,0,.18);border-radius:16px;padding:14px 20px;min-width:180px}
+.host-stats b{font-family:'Bricolage Grotesque';font-size:1.8rem;color:var(--gold-soft);display:block;line-height:1}
+.host-stats small{color:#dfe6cf}
+
+/* REVIEWS */
+.rev-track{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(300px,380px);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;scrollbar-width:thin}
+.rev{scroll-snap-align:start;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:14px;transition:border-color .3s}
+.rev:hover{border-color:var(--gold)}
+.rev .q{color:var(--gold);font-size:1.6rem}
+.rev p{color:var(--ink)}
+.rev footer{margin-top:auto;display:flex;align-items:center;gap:12px;border-top:1px dashed var(--line);padding-top:14px}
+.rev .av{width:42px;height:42px;border-radius:50%;background:var(--pond);color:#fff;display:grid;place-items:center;font-weight:700}
+.rev footer b{display:block;color:var(--pine)}
+.rev footer small{color:var(--muted)}
+.rev-nav{display:flex;gap:10px}
+.rev-nav button{width:48px;height:48px;border-radius:50%;border:2px solid var(--line);background:var(--paper);cursor:pointer;transition:.25s}
+.rev-nav button:hover{background:var(--pine);color:var(--canvas);border-color:var(--pine)}
+
+/* NEARBY + GOOD TO KNOW */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:34px}
+.panel h3{font-size:1.6rem;color:var(--pine);margin-bottom:18px;display:flex;gap:12px;align-items:center}
+.panel h3 i{color:var(--gold)}
+.list{list-style:none;display:grid;gap:4px}
+.list li{display:flex;gap:14px;align-items:flex-start;padding:12px 10px;border-radius:12px;transition:background .25s}
+.list li:hover{background:var(--canvas)}
+.list li i{color:var(--grass);margin-top:4px;width:20px;text-align:center}
+.list b{color:var(--pine)}
+.list small{display:block;color:var(--muted)}
+
+/* BOOKING */
+.book{background:var(--pine);color:var(--canvas)}
+.book .sec-head h2{color:var(--canvas)}
+.book .sec-head p{color:#c8d1b8}
+.book .eyebrow{color:var(--gold)}
+.book-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}
+.form{background:var(--paper);color:var(--ink);border-radius:28px;padding:36px}
+.step{display:flex;align-items:center;gap:12px;font-family:'Bricolage Grotesque';font-weight:700;font-size:1.2rem;color:var(--pine);margin:6px 0 16px}
+.step span{width:30px;height:30px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font-size:.9rem}
+.step:not(:first-child){margin-top:30px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f{display:flex;flex-direction:column;gap:6px}
+.f.full{grid-column:1/-1}
+.f label{font-weight:700;font-size:.88rem;color:var(--pine)}
+.f input,.f select,.f textarea{border:2px solid var(--line);border-radius:14px;padding:13px 14px;background:var(--canvas);transition:border-color .2s,background .2s;width:100%}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--grass);background:#fff}
+.f .err{font-size:.82rem;color:#b3392b;font-weight:600;display:none}
+.f.bad input,.f.bad select{border-color:#c0473a}
+.f.bad .err{display:block}
+.counters{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.counter{border:2px solid var(--line);border-radius:14px;padding:10px 12px;background:var(--canvas)}
+.counter label{font-weight:700;font-size:.86rem;color:var(--pine);display:block}
+.counter small{color:var(--muted);font-size:.76rem}
+.ctl{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.ctl button{width:34px;height:34px;border-radius:50%;border:2px solid var(--line);background:var(--paper);cursor:pointer;transition:.2s}
+.ctl button:hover:not(:disabled){border-color:var(--pine);background:var(--pine);color:#fff}
+.ctl button:disabled{opacity:.35;cursor:not-allowed}
+.ctl output{font-weight:800;font-size:1.15rem;font-family:'Bricolage Grotesque'}
+.note{display:none;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:14px;font-size:.9rem;font-weight:600;margin-top:12px}
+.note.show{display:flex;animation:fade .3s}
+.note.warn{background:#fbe9d0;color:#7a4a0c}
+.note.bad{background:#f8dcd7;color:#8e2a1e}
+.note.ok{background:#e4eed3;color:#365020}
+.note i{margin-top:3px}
+.rig{display:none}
+.rig.show{display:grid}
+.form .btn{width:100%;margin-top:26px;font-size:1.05rem;padding:17px}
+.summary{position:sticky;top:96px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:28px;overflow:hidden}
+.summary-img{aspect-ratio:16/10;overflow:hidden;background:#33422b}
+.summary-img img{width:100%;height:100%;object-fit:cover;transition:opacity .4s}
+.summary-body{padding:26px}
+.summary-body h3{font-size:1.5rem;margin-bottom:4px}
+.summary-body .sub{color:#c8d1b8;font-size:.92rem}
+.sumrow{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.16);font-size:.95rem}
+.sumrow span{color:#c8d1b8}
+.sumrow b{text-align:right}
+.trust{display:grid;gap:10px;margin-top:20px;font-size:.9rem;color:#dfe6cf}
+.trust i{color:var(--gold);width:22px}
+.success{display:none;text-align:center;padding:30px 10px}
+.success.show{display:block;animation:rise .5s var(--ease)}
+.success .big{width:84px;height:84px;margin:0 auto 18px;border-radius:50%;background:#e4eed3;color:var(--meadow);display:grid;place-items:center;font-size:2rem}
+.success h3{font-size:2rem;color:var(--pine);margin-bottom:10px}
+.success p{color:var(--muted);max-width:44ch;margin:0 auto 22px}
+
+/* FOOTER */
+footer.site{background:#141d10;color:#b9c4a8;padding:64px 0 28px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+.foot .logo{color:var(--canvas);margin-bottom:14px}
+.foot h4{color:var(--canvas);font-size:1.05rem;margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:9px}
+.foot a{text-decoration:none;transition:color .2s}
+.foot a:hover{color:var(--gold)}
+.foot li i{width:20px;color:var(--gold)}
+.copy{text-align:center;border-top:1px solid rgba(255,255,255,.1);margin-top:44px;padding-top:24px;font-size:.88rem}
+
+/* MOBILE BOOK BAR */
+.mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;align-items:center;justify-content:space-between;gap:12px;background:var(--pine);color:var(--canvas);border-radius:20px;padding:12px 12px 12px 18px;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .4s var(--ease)}
+.mbar.show{transform:none}
+.mbar b{font-family:'Bricolage Grotesque';font-size:1.15rem;display:block;line-height:1.1}
+.mbar small{color:#c8d1b8}
+.mbar .btn{padding:12px 18px}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media (max-width:1080px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-photo{min-height:460px}
+  .facts{grid-template-columns:repeat(3,1fr)}
+  .life{grid-template-columns:1fr}
+  .host{grid-template-columns:1fr;text-align:left;padding:40px}
+  .host-stats{grid-template-columns:repeat(3,1fr)}
+  .book-grid{grid-template-columns:1fr}
+  .summary{position:relative;top:0;order:-1}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  .nav-links{position:fixed;top:74px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--canvas);border-bottom:1px solid var(--line);padding:10px 20px 20px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:.3s var(--ease)}
+  .nav-links.open{transform:none;opacity:1;pointer-events:auto}
+  .nav-links li a:not(.btn){display:block;padding:14px 4px;border-bottom:1px solid var(--line)}
+  .nav-links .btn{margin-top:14px;width:100%}
+  .burger{display:grid;place-items:center}
+  .nav{background:rgba(246,241,228,.94);backdrop-filter:blur(10px)}
+  .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
+  .tile.big{grid-column:span 2}
+  .tile.wide{grid-column:span 2}
+  .duo{grid-template-columns:1fr}
+  .mbar{display:flex}
+  .sec{padding:72px 0}
+  body{padding-bottom:84px}
+}
+@media (max-width:560px){
+  .wrap{width:calc(100% - 32px)}
+  .hero{padding-top:90px}
+  .hero-photo{min-height:340px;border-radius:18px}
+  .hero-tag{left:18px;bottom:18px}
+  .hero-copy{padding:26px 22px}
+  .quick-row,.grid2{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact{flex-direction:column;align-items:flex-start;gap:10px}
+  .counters{grid-template-columns:1fr}
+  .amen{grid-template-columns:1fr}
+  .life-photos{height:400px}
+  .sticker{width:104px;height:104px;font-size:.85rem}
+  .host-stats{grid-template-columns:1fr}
+  .form{padding:24px 18px}
+  .panel{padding:24px 18px}
+  .foot{grid-template-columns:1fr}
+  .lightbox{padding:60px 12px}
+  .lb-prev,.lb-next{top:auto;bottom:60px;transform:none}
+  .tabs{width:100%}
+  .tab{flex:1;justify-content:center;padding:10px 12px;font-size:.9rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo" aria-label="Hobson Meadows home"><i class="fa-solid fa-frog"></i>Hobson Meadows</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i class="fa-solid fa-bars"></i></button>
+    <ul class="nav-links" id="menu">
+      <li><a href="#stays">Stays</a></li>
+      <li><a href="#gallery">Photos</a></li>
+      <li><a href="#life">Amenities</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#area">Area</a></li>
+      <li><a href="#book" class="btn btn-gold"><i class="fa-regular fa-calendar-check"></i>Book now</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-photo">
+        <img src="https://dxynby2r8cy0b.cloudfront.net/image/upload/c_limit,f_auto,h_1400,q_auto,w_1920/v1779140349/campground-photos/i3u66yp4yjp7ourcctbd.jpg" alt="Open meadow and wide sky at Hobson Meadows in Bow, Washington" fetchpriority="high">
+        <div class="hero-tag">
+          <span class="chip"><i class="fa-solid fa-award"></i>Top rated stay in Washington 2025</span>
+          <span class="chip"><i class="fa-solid fa-mountain-sun"></i>30 min to North Cascades HQ</span>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="hero-copy">
+          <span class="eyebrow"><i class="fa-solid fa-location-dot"></i>Bow, Skagit Valley, WA</span>
+          <h1>Wide skies, a quiet pond &amp; <span>your yurt.</span></h1>
+          <p>Twenty acres of open meadow with a private trout pond, starry nights and crackling campfires. Sleep in a cozy glamping yurt or pitch your own camp, all just minutes from I-5.</p>
+          <div class="rating">
+            <b>99%</b>
+            <span class="stars" aria-hidden="true"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+            <small>recommend &middot; 148 reviews</small>
+          </div>
+        </div>
+
+        <form class="quick" id="quick" novalidate>
+          <h3>Plan your stay <small>from $35/night</small></h3>
+          <div class="qfield">
+            <label for="qType">I'd like</label>
+            <select id="qType">
+              <option value="yurt">A glamping yurt</option>
+              <option value="site">An RV or tent site</option>
+              <option value="venue">The private event venue</option>
+            </select>
+          </div>
+          <div class="quick-row">
+            <div class="qfield"><label for="qIn">Check in</label><input type="date" id="qIn"></div>
+            <div class="qfield"><label for="qOut">Check out</label><input type="date" id="qOut"></div>
+          </div>
+          <button class="btn btn-gold" type="submit"><i class="fa-solid fa-arrow-right"></i>See stays &amp; book</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="facts reveal">
+      <div class="fact"><i class="fa-solid fa-seedling"></i><div><b>20 acres</b><span>Meadow &amp; forest edge</span></div></div>
+      <div class="fact"><i class="fa-solid fa-campground"></i><div><b>16 stays</b><span>Yurts, RV &amp; tent sites</span></div></div>
+      <div class="fact"><i class="fa-solid fa-fish"></i><div><b>Trout pond</b><span>Catch &amp; release, paddle boards</span></div></div>
+      <div class="fact"><i class="fa-solid fa-shower"></i><div><b>Hot shower</b><span>Flush toilets &amp; dish sink</span></div></div>
+      <div class="fact"><i class="fa-solid fa-dog"></i><div><b>Dog friendly</b><span>Off leash on camp sites</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STAYS -->
+<section class="sec stays" id="stays">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow"><i class="fa-solid fa-bed"></i>Choose your stay</span>
+        <h2>Find the spot that fits your trip</h2>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Stay types">
+        <button class="tab" role="tab" aria-selected="true" data-tab="yurt"><i class="fa-solid fa-tent"></i>Yurts <span class="n">4</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="site"><i class="fa-solid fa-caravan"></i>RV &amp; Tent <span class="n">11</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="venue"><i class="fa-solid fa-champagne-glasses"></i>Events <span class="n">1</span></button>
+      </div>
+    </div>
+    <p class="tab-intro" id="tabIntro"></p>
+    <div class="cards" id="cards" role="tabpanel"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec" id="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow"><i class="fa-solid fa-camera"></i>Take a look around</span>
+        <h2>The meadow in pictures</h2>
+      </div>
+      <p>Tap any photo to see it full size. Use your arrow keys or swipe to browse.</p>
+    </div>
+    <div class="mosaic reveal" id="mosaic"></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<!-- LIFE / AMENITIES -->
+<section class="sec" id="life" style="padding-top:0">
+  <div class="wrap life">
+    <div class="life-photos reveal">
+      <img src="https://dxynby2r8cy0b.cloudfront.net/f_auto,c_limit,w_1200,q_auto/v1786467882/campground-photos/tx0tl2mlwg4m6c7awvar.jpg" alt="Paddle boarding on the private pond" loading="lazy">
+      <img src="https://dxynby2r8cy0b.cloudfront.net/images/f_auto,c_limit,w_900,q_auto/v1727119659/campground-photos/c6rijb0hnlnz68mfy0rh/hobson-meadows-happy-frog-yurt-pacific-northwest.jpg" alt="Guests smiling outside a glamping yurt" loading="lazy">
+      <div class="sticker"><span><i class="fa-solid fa-fire"></i>S'mores<br>every night</span></div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow"><i class="fa-solid fa-leaf"></i>Life at the meadow</span>
+      <h2 style="font-size:clamp(2.1rem,4.6vw,3.4rem);color:var(--pine);margin:10px 0 16px;font-weight:800">Slow mornings by the pond. Fireside nights under the stars.</h2>
+      <p style="color:var(--muted)">Wake up to birdsong and the fountain on the pond, wander the back trail loop, spot deer and rabbits, then gather round the fire as the sky fills with stars. Beth takes care of the cleaning so you can simply relax.</p>
+      <div class="amen">
+        <div><i class="fa-solid fa-shower"></i><span><b>Warm water shower</b><small>Bring your own towel</small></span></div>
+        <div><i class="fa-solid fa-toilet"></i><span><b>Three flush toilets</b><small>Plus portable restrooms</small></span></div>
+        <div><i class="fa-solid fa-sink"></i><span><b>Outdoor dish sink</b><small>Running water for washing up</small></span></div>
+        <div><i class="fa-solid fa-fire-flame-curved"></i><span><b>Fire pits</b><small>Firewood available from host</small></span></div>
+        <div><i class="fa-solid fa-fish-fins"></i><span><b>Stocked trout pond</b><small>Catch &amp; release fishing</small></span></div>
+        <div><i class="fa-solid fa-person-hiking"></i><span><b>Walking trail</b><small>Loops the pond &amp; back fields</small></span></div>
+        <div><i class="fa-solid fa-star"></i><span><b>Dark night skies</b><small>Great for stargazing</small></span></div>
+        <div><i class="fa-solid fa-children"></i><span><b>Family friendly</b><small>Loved by guests with kids</small></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOST -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="host reveal">
+      <img class="host-av" src="https://dxynby2r8cy0b.cloudfront.net/image/upload/c_fill,f_auto,h_300,w_300/v1784088793/profile/mgq3yawz6miqwavq8945.png" alt="Host Beth" loading="lazy">
+      <div style="position:relative">
+        <span class="eyebrow"><i class="fa-solid fa-house-chimney"></i>Meet your hosts</span>
+        <h2>Beth, Matt &amp; the welcome committee</h2>
+        <p>Beth and Matt live on site and love sharing their family land with guests. They check in, help you settle, and give you plenty of space to just be. Guests call them the highlight of the stay.</p>
+        <div class="dogs">
+          <span><i class="fa-solid fa-paw"></i>Nelly</span>
+          <span><i class="fa-solid fa-paw"></i>Piper</span>
+          <span><i class="fa-solid fa-heart"></i>Will happily greet your dog</span>
+        </div>
+      </div>
+      <div class="host-stats">
+        <div><b>99%</b><small>Guests recommend</small></div>
+        <div><b>181</b><small>Ratings</small></div>
+        <div><b>On site</b><small>Help when you need it</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec" id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow"><i class="fa-solid fa-comment-dots"></i>Guest stories</span>
+        <h2>Why campers keep coming back</h2>
+      </div>
+      <div class="rev-nav">
+        <button id="revPrev" aria-label="Previous reviews"><i class="fa-solid fa-arrow-left"></i></button>
+        <button id="revNext" aria-label="Next reviews"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+    <div class="rev-track reveal" id="revTrack" tabindex="0" aria-label="Guest reviews"></div>
+  </div>
+</section>
+
+<!-- AREA + GOOD TO KNOW -->
+<section class="sec" id="area" style="padding-top:0">
+  <div class="wrap duo">
+    <div class="panel reveal">
+      <h3><i class="fa-solid fa-map-location-dot"></i>Close to the best of Skagit</h3>
+      <ul class="list">
+        <li><i class="fa-solid fa-mountain"></i><span><b>Blanchard Mountain</b><small>Hiking with big views over Puget Sound</small></span></li>
+        <li><i class="fa-solid fa-road"></i><span><b>Chuckanut Drive</b><small>One of the most scenic coastal drives in the region</small></span></li>
+        <li><i class="fa-solid fa-mug-hot"></i><span><b>Edison village</b><small>Bakeries, shops and Tweets Cafe, a local favorite</small></span></li>
+        <li><i class="fa-solid fa-cheese"></i><span><b>Blueberry &amp; cheese farms</b><small>Pick, taste and stock up for the campfire</small></span></li>
+        <li><i class="fa-solid fa-dice"></i><span><b>Skagit Valley Casino Resort</b><small>Dining, shows and gaming nearby</small></span></li>
+        <li><i class="fa-solid fa-tree"></i><span><b>North Cascades National Park</b><small>Visitor HQ within about 30 minutes</small></span></li>
+      </ul>
+    </div>
+    <div class="panel reveal">
+      <h3><i class="fa-solid fa-circle-info"></i>Good to know before you go</h3>
+      <ul class="list">
+        <li><i class="fa-solid fa-lightbulb"></i><span><b>Yurts have no electricity</b><small>Lanterns are provided for a warm glow</small></span></li>
+        <li><i class="fa-solid fa-shirt"></i><span><b>Pack layers</b><small>Days run warm, nights get cool, and there is no heat</small></span></li>
+        <li><i class="fa-solid fa-dog"></i><span><b>Pets</b><small>Free on RV &amp; tent sites. Blackberry is the only pet friendly yurt ($55 per pet, per night)</small></span></li>
+        <li><i class="fa-solid fa-bottle-water"></i><span><b>Drinking water</b><small>Bring your own for most camp sites. Pondside Paradise &amp; Wildernest #5 have potable water</small></span></li>
+        <li><i class="fa-solid fa-plug-circle-xmark"></i><span><b>No hookups</b><small>RV &amp; tent sites are dry camping (the event venue has power &amp; water)</small></span></li>
+        <li><i class="fa-solid fa-car"></i><span><b>Easy access</b><small>Drive right up to your site, close to I-5. Exact address shared after booking</small></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="sec book" id="book">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow"><i class="fa-solid fa-calendar-check"></i>Request to book</span>
+        <h2>Three quick steps to your meadow escape</h2>
+      </div>
+      <p>Pick a stay, choose your dates and tell us who's coming. Beth will confirm your booking and rate personally.</p>
+    </div>
+
+    <div class="book-grid">
+      <div class="form">
+        <form id="bookForm" novalidate>
+          <div class="step"><span>1</span>Your stay &amp; dates</div>
+          <div class="grid2">
+            <div class="f full" id="fSite">
+              <label for="site">Stay</label>
+              <select id="site" required></select>
+              <span class="err">Please choose a stay.</span>
+            </div>
+            <div class="f" id="fIn">
+              <label for="checkin">Check in</label>
+              <input type="date" id="checkin" required>
+              <span class="err">Pick a check in date from today on.</span>
+            </div>
+            <div class="f" id="fOut">
+              <label for="checkout">Check out</label>
+              <input type="date" id="checkout" required>
+              <span class="err">Check out must be after check in.</span>
+            </div>
+          </div>
+
+          <div class="step"><span>2</span>Who's coming</div>
+          <div class="counters">
+            <div class="counter"><label>Adults</label><small>Age 13+</small><div class="ctl"><button type="button" data-c="adults" data-d="-1" aria-label="Fewer adults"><i class="fa-solid fa-minus"></i></button><output id="adults">2</output><button type="button" data-c="adults" data-d="1" aria-label="More adults"><i class="fa-solid fa-plus"></i></button></div></div>
+            <div class="counter"><label>Children</label><small>Age 2 to 12</small><div class="ctl"><button type="button" data-c="children" data-d="-1" aria-label="Fewer children"><i class="fa-solid fa-minus"></i></button><output id="children">0</output><button type="button" data-c="children" data-d="1" aria-label="More children"><i class="fa-solid fa-plus"></i></button></div></div>
+            <div class="counter"><label>Pets</label><small id="petHint">Dogs welcome</small><div class="ctl"><button type="button" data-c="pets" data-d="-1" aria-label="Fewer pets"><i class="fa-solid fa-minus"></i></button><output id="pets">0</output><button type="button" data-c="pets" data-d="1" aria-label="More pets"><i class="fa-solid fa-plus"></i></button></div></div>
+          </div>
+          <div class="note bad" id="noteGuests"><i class="fa-solid fa-users"></i><span></span></div>
+          <div class="note warn" id="notePets"><i class="fa-solid fa-paw"></i><span></span></div>
+
+          <div class="grid2 rig" id="rig" style="margin-top:16px">
+            <div class="f">
+              <label for="vehicle">How are you camping?</label>
+              <select id="vehicle">
+                <option value="tent">Tent</option>
+                <option value="car">Car camping</option>
+                <option value="van">Campervan</option>
+                <option value="trailer">Travel trailer</option>
+                <option value="motorhome">Motorhome / RV</option>
+                <option value="truck">Truck camper</option>
+              </select>
+            </div>
+            <div class="f">
+              <label for="rigLen">Vehicle length (ft)</label>
+              <input type="number" id="rigLen" min="0" max="60" placeholder="e.g. 24">
+            </div>
+          </div>
+          <div class="note bad" id="noteRig"><i class="fa-solid fa-ruler-horizontal"></i><span></span></div>
+
+          <div class="step"><span>3</span>Your details</div>
+          <div class="grid2">
+            <div class="f" id="fName"><label for="name">Full name</label><input type="text" id="name" autocomplete="name" required><span class="err">Please add your name.</span></div>
+            <div class="f" id="fEmail"><label for="email">Email</label><input type="email" id="email" autocomplete="email" required><span class="err">Please add a valid email.</span></div>
+            <div class="f full"><label for="phone">Phone <span style="font-weight:500;color:var(--muted)">(optional)</span></label><input type="tel" id="phone" autocomplete="tel"></div>
+            <div class="f full"><label for="msg">Anything Beth should know? <span style="font-weight:500;color:var(--muted)">(optional)</span></label><textarea id="msg" rows="3" placeholder="Arrival time, celebrations, firewood..."></textarea></div>
+          </div>
+
+          <button class="btn btn-gold" type="submit"><i class="fa-solid fa-paper-plane"></i>Send booking request</button>
+          <p style="text-align:center;font-size:.85rem;color:var(--muted);margin-top:12px"><i class="fa-solid fa-lock"></i> No payment taken now. Beth confirms availability first.</p>
+        </form>
+
+        <div class="success" id="success" role="status" aria-live="polite">
+          <div class="big"><i class="fa-solid fa-check"></i></div>
+          <h3>Request sent!</h3>
+          <p id="successText"></p>
+          <button class="btn btn-dark" type="button" id="again"><i class="fa-solid fa-rotate-left"></i>Make another request</button>
+        </div>
+      </div>
+
+      <aside class="summary" aria-label="Booking summary">
+        <div class="summary-img"><img id="sumImg" src="" alt=""></div>
+        <div class="summary-body">
+          <h3 id="sumName">Choose a stay</h3>
+          <div class="sub" id="sumSub">&nbsp;</div>
+          <div style="margin-top:14px">
+            <div class="sumrow"><span>Dates</span><b id="sumDates">Not set</b></div>
+            <div class="sumrow"><span>Nights</span><b id="sumNights">0</b></div>
+            <div class="sumrow"><span>Guests</span><b id="sumGuests">2 adults</b></div>
+            <div class="sumrow"><span>Rate</span><b>From $35 / night</b></div>
+          </div>
+          <div class="trust">
+            <span><i class="fa-solid fa-star"></i>99% of guests recommend</span>
+            <span><i class="fa-solid fa-shield-heart"></i>Staff verified property</span>
+            <span><i class="fa-solid fa-broom"></i>Cleaning taken care of</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#top" class="logo"><i class="fa-solid fa-frog"></i>Hobson Meadows</a>
+        <p>Glamping yurts, RV and tent camping on 20 peaceful acres in the Skagit Valley. Happy glamping!</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#stays">Stays</a></li>
+          <li><a href="#gallery">Photos</a></li>
+          <li><a href="#life">Amenities</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Plan</h4>
+        <ul>
+          <li><a href="#area">Things nearby</a></li>
+          <li><a href="#area">Good to know</a></li>
+          <li><a href="#book">Request to book</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Find us</h4>
+        <ul>
+          <li><i class="fa-solid fa-location-dot"></i>Bow, Skagit County, WA</li>
+          <li><i class="fa-solid fa-user"></i>Hosted by Beth &amp; Matt</li>
+          <li><i class="fa-solid fa-road"></i>Minutes from I-5</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">&copy; <span id="yr"></span> Hobson Meadows. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <div><b>From $35 / night</b><small><i class="fa-solid fa-star" style="color:var(--gold)"></i> 99% recommend</small></div>
+  <a href="#book" class="btn btn-gold">Book now</a>
+</div>
+
+<script>
+const CDN = 'https://dxynby2r8cy0b.cloudfront.net/';
+const img = (p, w = 1000) => CDN + p.replace('{T}', `f_auto,c_limit,w_${w},q_auto`);
+
+/* ---------- DATA (from the listing) ---------- */
+const STAYS = [
+  {id:'happy-frog', type:'yurt', name:'Happy Frog Yurt', icon:'fa-frog', sleeps:4, beds:'2 beds', pets:false, score:'100%', reviews:34,
+   img:'images/{T}/v1727119659/campground-photos/pylegjnronjqeqr6lb0r/hobson-meadows-happy-frog-yurt-pacific-northwest.jpg',
+   blurb:'Right by the pond with lovely morning views. Comfy beds, lanterns and a picnic table.'},
+  {id:'huckleberry', type:'yurt', name:'Huckleberry Yurt', icon:'fa-tent', sleeps:4, beds:'2 beds', pets:false, score:'100%', reviews:18,
+   img:'images/{T}/v1751916187/dev-campground-photos/e9ganflz2leuk3hekwqr/hobson-meadows-huckleberry-yurt-pacific-northwest.jpg',
+   blurb:'Guests call it true glamping. Watch the fountain from breakfast and fall asleep to frogs.'},
+  {id:'blackberry', type:'yurt', name:'Blackberry Yurt', icon:'fa-tent', sleeps:4, beds:'2 beds', pets:true, petFee:55, score:'92%', reviews:13,
+   img:'{T}/v1781660370/dev-campground-photos/rzq7nitlzgwm5itgmkxq.jpg',
+   blurb:'The pet friendly yurt. Spacious, spotless and dry even on rainy nights.'},
+  {id:'elderberry', type:'yurt', name:'Elderberry Yurt', icon:'fa-tent', sleeps:2, beds:'1 bed', pets:false, score:'100%', reviews:12,
+   img:'images/{T}/v1781660825/dev-campground-photos/r1ovhwwv4phvrlkiavyo/hobson-meadows-elderberry-yurt-pacific-northwest.jpg',
+   blurb:'A cozy yurt for two. Perfect for a quiet couples getaway under the stars.'},
+
+  {id:'wildernest-1', type:'site', name:'Wildernest #1', sleeps:12, max:45, pets:true, water:false, score:'100%', reviews:19,
+   img:'images/{T}/v1749535987/dev-campground-photos/vaofrumsxbsk5ssxk2ce/hobson-meadows-wildernest-1-pacific-northwest.jpg',
+   blurb:'Tucked into the meadow edge for a private feel. Room for big groups.'},
+  {id:'pondside', type:'site', name:'Pondside Paradise', sleeps:4, max:45, pets:true, water:true, score:'100%', reviews:17,
+   img:'images/{T}/v1721454009/dev-campground-photos/ttfqqg38wbhrijpcx91e/hobson-meadows-pondside-paradise-pacific-northwest.jpg',
+   blurb:'Views over the private pond, sunsets and a frog chorus at night.'},
+  {id:'wildernest-5', type:'site', name:'Wildernest #5', sleeps:4, max:22, pets:true, water:true, score:'97%', reviews:16,
+   img:'images/{T}/v1749620497/dev-campground-photos/bqpeoxvhjxmp3iubvp8f/hobson-meadows-wildernest-5-pacific-northwest.jpg',
+   blurb:'Back field site full of birdsong. Best for tents and smaller rigs.'},
+  {id:'wildernest-2', type:'site', name:'Wildernest #2', sleeps:4, max:35, pets:true, water:false, score:'100%', reviews:9,
+   img:'images/{T}/v1756437454/dev-campground-photos/yw5tpxz9taem3tlj0no5/hobson-meadows-wildernest-2-pacific-northwest.jpg',
+   blurb:'Forest edge site where deer and rabbits wander by.'},
+  {id:'wildernest-4', type:'site', name:'Wildernest #4', sleeps:4, max:35, pets:true, water:false, score:'100%', reviews:8,
+   img:'{T}/v1784755921/campground-photos/pnp6iin39xkhul7c0wbi.jpg',
+   blurb:'Peaceful back field spot, a short walk to the pond trail.'},
+  {id:'wildernest-3', type:'site', name:'Wildernest #3', sleeps:4, max:35, pets:true, water:false, score:'100%', reviews:7,
+   img:'images/{T}/v1756435542/dev-campground-photos/xciss2auie8gwch05kpa/hobson-meadows-wildernest-3-pacific-northwest.jpg',
+   blurb:'Plenty of space, well kept grass and a fire pit for s\'mores.'},
+  {id:'wildernest-6', type:'site', name:'Wildernest #6', sleeps:4, max:35, pets:true, water:false, score:'100%', reviews:3,
+   img:'images/{T}/v1749620323/dev-campground-photos/btrxyryz700hjsrhfnxv/hobson-meadows-wildernest-6-pacific-northwest.jpg',
+   blurb:'Guests love the sunsets here. Great for vans and small trailers.'},
+  {id:'meadows-a', type:'site', name:'Meadows A', sleeps:4, max:45, pets:true, water:false, score:'100%', reviews:3,
+   img:'images/{T}/v1781757256/dev-campground-photos/lb8e86brysvpcmpagvpk/hobson-meadows-meadows-b-pacific-northwest.jpg',
+   blurb:'Grassy open meadow under wide skies, close to the flush toilets.'},
+  {id:'meadows-b', type:'site', name:'Meadows B', sleeps:4, max:45, pets:true, water:false, score:'100%', reviews:2,
+   img:'images/{T}/v1717343769/land-photos/mpk8laaxtsy41qxv2bch/hobson-meadows-pondside-paradise-pacific-northwest.jpg',
+   blurb:'Roomy meadow site ringed by trees. Ideal for stargazing.'},
+  {id:'meadows-c', type:'site', name:'Meadows C', sleeps:4, max:45, pets:true, water:false, score:'100%', reviews:4,
+   img:'{T}/v1787713560/campground-photos/unwnxpca82i4bfbvvedb.jpg',
+   blurb:'Big grassy pad that fits long rigs, with a fire pit and sink nearby.'},
+  {id:'meadows-d', type:'site', name:'Meadows D', sleeps:4, max:45, pets:true, water:false, score:'100%', reviews:2,
+   img:'images/{T}/v1781660670/dev-campground-photos/clat2cewbxtnmfdmcpgo/hobson-meadows-pondside-paradise-pacific-northwest.jpg',
+   blurb:'Quiet and private, a solid base for exploring Bow and Edison.'},
+
+  {id:'venue', type:'venue', name:'Hobson Meadows Venue', sleeps:50, max:35, pets:true, water:true, score:null, reviews:0,
+   img:'{T}/v1779407160/dev-campground-photos/hnryomxgcjoyc6kzwzri.png',
+   blurb:'Exclusive use of the whole property for weddings, birthdays, showers, reunions and retreats. Power and water hookups, ample parking, no campfires.'}
+];
+
+const INTRO = {
+  yurt:'Ready made glamping. Comfy beds with fresh linens, lanterns, a fire pit and picnic table, with the shower and flush toilets just across the pond. Just bring a towel.',
+  site:'Pitch a tent or park your rig on open meadow or forest edge sites. Each has a fire pit, toilets nearby and off leash space for your dog. Dry camping, no hookups.',
+  venue:'Have the whole meadow to yourselves. One celebration at a time, with a private trout pond, mature trees, wide skies and easy access from I-5.'
+};
+
+const GALLERY = [
+  ['{T}/v1786467954/campground-photos/uecf7ch4g6gtlhva6clw.jpg','Huge open space, looking at site 1','big'],
+  ['images/{T}/v1727119658/campground-photos/yziahclxflcftz8nzj9k/hobson-meadows-happy-frog-yurt-pacific-northwest.jpg','All you need is your suitcase','tall'],
+  ['{T}/v1786467882/campground-photos/tx0tl2mlwg4m6c7awvar.jpg','Paddle boarding on the pond',''],
+  ['{T}/v1786467906/campground-photos/tmtogtsy24yauavzsfdh.jpg','Camp site 6',''],
+  ['images/{T}/v1727119658/campground-photos/iwcxkkhrfac8d58wxch9/hobson-meadows-happy-frog-yurt-pacific-northwest.jpg','Cozy yurt interiors','wide'],
+  ['{T}/v1782936442/dev-campground-photos/bg72dgby1s0qvfy6lype.jpg','Pondside Paradise',''],
+  ['{T}/v1785290409/campground-photos/lai8vrikbtczyge4xvbn.jpg','Room to roam',''],
+  ['images/{T}/v1779428933/dev-campground-photos/mb9qxaqgpebktuxzzibe/hobson-meadows-blackberry-yurt-pacific-northwest.jpg','Blackberry Yurt','tall'],
+  ['{T}/v1785629655/campground-photos/cop5lld4dljiyv5yhlsk.jpg','Forest edge camping',''],
+  ['images/{T}/v1750966013/campground-photos/qksguvdphzjthlf5pevb/hobson-meadows-happy-frog-yurt-pacific-northwest.jpg','Evenings at the meadow',''],
+  ['{T}/v1779429606/dev-campground-photos/hw3fv2csqq1g4bu4o6dj.jpg','Huckleberry Yurt','wide'],
+  ['images/{T}/v1781660820/dev-campground-photos/punetaacpps9hcfkeafr/hobson-meadows-elderberry-yurt-pacific-northwest.jpg','Elderberry Yurt',''],
+  ['{T}/v1780013689/campground-photos/ihrexs1tzsnzhhuithdy.jpg','Wide open skies',''],
+  ['images/{T}/v1724636293/campground-photos/isufjvb2s2vrn8htoj2x/hobson-meadows-happy-frog-yurt-pacific-northwest.jpg','Glamping by the pond','']
+];
+
+const REVIEWS = [
+  ['Comfort, puppies, and peace','It felt private from tent to tent but still friendly. The bed was so comfortable and the bedding was warm for the cold nights. Big fans of the owner\'s pups!','Taylor K.','Huckleberry Yurt'],
+  ['Peaceful oasis','The pond and fountain were soothing to watch over breakfast. Bathrooms clean and stocked, and the yurt was extremely comfortable. True glamping.','Taylor C.','Huckleberry Yurt'],
+  ['Success camping with our doggo','Our dog played with the resident pups. Spacious, clean yurt, hot shower, and it stayed perfectly dry through a night of heavy rain.','Sherry Y.','Blackberry Yurt'],
+  ['Peaceful camping, incredible host','Shower, bathrooms and a pond with fish and paddle boards. The sunsets are incredible and the rate is so affordable. We\'d 100% come back.','Zack & Lina R.','Wildernest #1'],
+  ['Cleaner than many hotels','A great intro to camping for our city kids. Flush toilets and a hot shower, a peaceful setting, and bullfrogs sang us to sleep.','Shelly G.','Blackberry Yurt'],
+  ['Wonderful stay','Clean bathrooms and shower, a handy dishwashing station, and a super responsive host. The grass was manicured and kept from puddling.','Melaney O.','Wildernest #4'],
+  ['Just book it','11 out of 10 stars. Beth and Matt are unbeatable hosts. What a peaceful property.','Caroline B.','Huckleberry Yurt'],
+  ['Cozy and peaceful','The yurt was nice and cozy and seeing the stars at night was amazing. A sweet, accommodating host and two very friendly doggies.','Nichapat K.','Happy Frog Yurt']
+];
+
+/* ---------- HELPERS ---------- */
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const byId = id => STAYS.find(s => s.id === id);
+const todayISO = () => { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0,10); };
+const addDays = (iso, n) => { const d = new Date(iso + 'T12:00:00'); d.setDate(d.getDate() + n); return d.toISOString().slice(0,10); };
+const fmt = iso => new Date(iso + 'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
+const nightsBetween = (a,b) => Math.round((new Date(b+'T12:00:00') - new Date(a+'T12:00:00')) / 864e5);
+
+/* ---------- NAV ---------- */
+const nav = $('#nav'), burger = $('#burger'), menu = $('#menu'), mbar = $('#mbar');
+addEventListener('scroll', () => {
+  nav.classList.toggle('solid', scrollY > 30);
+  const bookTop = $('#book').getBoundingClientRect().top;
+  mbar.classList.toggle('show', scrollY > 500 && bookTop > innerHeight * .6);
+}, {passive:true});
+burger.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+  burger.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+});
+menu.addEventListener('click', e => { if (e.target.closest('a')) { menu.classList.remove('open'); burger.setAttribute('aria-expanded', false); burger.innerHTML = '<i class="fa-solid fa-bars"></i>'; } });
+
+/* ---------- STAY CARDS ---------- */
+function renderCards(type){
+  $('#tabIntro').textContent = INTRO[type];
+  $('#cards').innerHTML = STAYS.filter(s => s.type === type).map((s,i) => {
+    const meta = [`<span><i class="fa-solid fa-user-group"></i>Sleeps ${s.sleeps}</span>`];
+    if (s.beds) meta.push(`<span><i class="fa-solid fa-bed"></i>${s.beds}</span>`);
+    if (s.type !== 'yurt') meta.push(`<span><i class="fa-solid fa-caravan"></i>Up to ${s.max} ft</span>`);
+    if (s.type === 'yurt') meta.push(`<span><i class="fa-solid fa-shower"></i>Shower access</span>`);
+    if (s.water) meta.push(`<span><i class="fa-solid fa-droplet"></i>Potable water</span>`);
+    meta.push(`<span><i class="fa-solid fa-fire"></i>${s.type === 'venue' ? 'No campfires' : 'Fire pit'}</span>`);
+    return `<article class="card" style="animation-delay:${i*60}ms">
+      <div class="card-img">
+        <img src="${img(s.img, 800)}" alt="${s.name} at Hobson Meadows" loading="lazy">
+        ${s.score ? `<span class="badge"><i class="fa-solid fa-thumbs-up"></i>${s.score} &middot; ${s.reviews} reviews</span>` : `<span class="badge"><i class="fa-solid fa-champagne-glasses"></i>Exclusive use</span>`}
+        ${s.pets && s.type === 'yurt' ? `<span class="badge pet"><i class="fa-solid fa-paw"></i>Pets OK</span>` : ''}
+      </div>
+      <div class="card-body">
+        <h3>${s.name}</h3>
+        <div class="meta">${meta.join('')}</div>
+        <p>${s.blurb}</p>
+        <button class="btn btn-dark" data-book="${s.id}"><i class="fa-regular fa-calendar"></i>Book this ${s.type === 'yurt' ? 'yurt' : s.type === 'venue' ? 'venue' : 'site'}</button>
+      </div>
+    </article>`;
+  }).join('');
+}
+function setTab(type){
+  $$('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.tab === type));
+  renderCards(type);
+}
+$$('.tab').forEach(t => t.addEventListener('click', () => setTab(t.dataset.tab)));
+$('#cards').addEventListener('click', e => {
+  const b = e.target.closest('[data-book]'); if (!b) return;
+  $('#site').value = b.dataset.book; updateAll();
+  $('#book').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+});
+setTab('yurt');
+
+/* ---------- GALLERY + LIGHTBOX ---------- */
+$('#mosaic').innerHTML = GALLERY.map((g,i) =>
+  `<button class="tile ${g[2]}" data-i="${i}" aria-label="Open photo: ${g[1]}"><img src="${img(g[0], g[2]==='big'?1400:800)}" alt="${g[1]}" loading="lazy"><figcaption>${g[1]}</figcaption></button>`
+).join('');
+const lb = $('#lightbox'); let cur = 0, lastFocus;
+function show(i){ cur = (i + GALLERY.length) % GALLERY.length; $('#lbImg').src = img(GALLERY[cur][0], 1920); $('#lbImg').alt = GALLERY[cur][1]; $('#lbCap').textContent = `${GALLERY[cur][1]}  ·  ${cur+1} / ${GALLERY.length}`; }
+function openLb(i){ lastFocus = document.activeElement; show(i); lb.classList.add('open'); document.body.style.overflow='hidden'; $('#lbClose').focus(); }
+function closeLb(){ lb.classList.remove('open'); document.body.style.overflow=''; lastFocus && lastFocus.focus(); }
+$('#mosaic').addEventListener('click', e => { const t = e.target.closest('.tile'); if (t) openLb(+t.dataset.i); });
+$('#lbClose').onclick = closeLb; $('#lbPrev').onclick = () => show(cur-1); $('#lbNext').onclick = () => show(cur+1);
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLb(); if (e.key === 'ArrowLeft') show(cur-1); if (e.key === 'ArrowRight') show(cur+1);
+  if (e.key === 'Tab') { const f = [$('#lbClose'),$('#lbPrev'),$('#lbNext')]; const i = f.indexOf(document.activeElement); e.preventDefault(); f[(i + (e.shiftKey?-1:1) + 3) % 3].focus(); }
+});
+let tx = 0;
+lb.addEventListener('touchstart', e => tx = e.touches[0].clientX, {passive:true});
+lb.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); });
+
+/* ---------- REVIEWS ---------- */
+$('#revTrack').innerHTML = REVIEWS.map(r => `<article class="rev">
+  <i class="fa-solid fa-quote-left q" aria-hidden="true"></i>
+  <h4 style="font-size:1.2rem;color:var(--pine)">${r[0]}</h4>
+  <p>${r[1]}</p>
+  <footer><span class="av">${r[2][0]}</span><span><b>${r[2]}</b><small>Stayed at ${r[3]}</small></span></footer>
+</article>`).join('');
+const track = $('#revTrack');
+$('#revPrev').onclick = () => track.scrollBy({left:-track.clientWidth*.8, behavior:'smooth'});
+$('#revNext').onclick = () => track.scrollBy({left: track.clientWidth*.8, behavior:'smooth'});
+
+/* ---------- BOOKING ---------- */
+const siteSel = $('#site');
+siteSel.innerHTML = '<option value="">Select a yurt, site or the venue</option>' +
+  [['yurt','Glamping yurts'],['site','RV & tent sites'],['venue','Private events']].map(([t,l]) =>
+    `<optgroup label="${l}">` + STAYS.filter(s=>s.type===t).map(s=>`<option value="${s.id}">${s.name} (sleeps ${s.sleeps}${s.max && t!=='yurt' ? `, up to ${s.max} ft`:''})</option>`).join('') + '</optgroup>'
+  ).join('');
+
+const count = {adults:2, children:0, pets:0};
+const T = todayISO();
+['#checkin','#qIn'].forEach(s => $(s).min = T);
+['#checkout','#qOut'].forEach(s => $(s).min = addDays(T,1));
+
+function syncOutMin(inSel, outSel){
+  const v = $(inSel).value; if (!v) return;
+  $(outSel).min = addDays(v,1);
+  if (!$(outSel).value || $(outSel).value <= v) $(outSel).value = addDays(v,1);
+}
+$('#qIn').addEventListener('change', () => syncOutMin('#qIn','#qOut'));
+$('#checkin').addEventListener('change', () => { syncOutMin('#checkin','#checkout'); updateAll(); });
+$('#checkout').addEventListener('change', updateAll);
+siteSel.addEventListener('change', updateAll);
+$('#rigLen').addEventListener('input', updateAll);
+$('#vehicle').addEventListener('change', updateAll);
+
+$$('.ctl button').forEach(b => b.addEventListener('click', () => {
+  const k = b.dataset.c, d = +b.dataset.d;
+  const min = k === 'adults' ? 1 : 0, max = k === 'pets' ? 4 : 50;
+  count[k] = Math.min(max, Math.max(min, count[k] + d));
+  updateAll();
+}));
+
+function note(id, msg){ const n = $(id); n.classList.toggle('show', !!msg); if (msg) n.querySelector('span').innerHTML = msg; }
+
+function updateAll(){
+  const s = byId(siteSel.value);
+  Object.keys(count).forEach(k => $('#'+k).textContent = count[k]);
+  const petsAllowed = !s || s.pets;
+  if (!petsAllowed) count.pets = 0, $('#pets').textContent = 0;
+  $$('.ctl button').forEach(b => {
+    const k = b.dataset.c, d = +b.dataset.d;
+    b.disabled = (d < 0 && count[k] <= (k==='adults'?1:0)) || (k === 'pets' && d > 0 && (!petsAllowed || count.pets >= 4));
+  });
+  $('#petHint').textContent = !s ? 'Dogs welcome' : !s.pets ? 'Not allowed here' : s.petFee ? `$${s.petFee} per pet / night` : 'Free, off leash OK';
+
+  const guests = count.adults + count.children;
+  note('#noteGuests', s && guests > s.sleeps ? `${s.name} sleeps up to ${s.sleeps}. Please choose a larger stay or book a second one.` : '');
+  note('#notePets', s && !s.pets ? `Pets aren't allowed in ${s.name}. Bringing your dog? Try the <b>Blackberry Yurt</b> or any RV &amp; tent site.` :
+                    s && s.petFee && count.pets ? `A pet fee of $${s.petFee} per pet, per night applies to this yurt.` : '');
+
+  const needsRig = s && s.type !== 'yurt';
+  $('#rig').classList.toggle('show', !!needsRig);
+  const len = +$('#rigLen').value;
+  const tooLong = needsRig && $('#vehicle').value !== 'tent' && len > s.max;
+  note('#noteRig', tooLong ? `${s.name} fits vehicles up to ${s.max} ft. Your ${len} ft rig won't fit. Meadows A to D, Wildernest #1 and Pondside Paradise take up to 45 ft.` : '');
+
+  // summary
+  if (s){
+    const src = img(s.img, 900);
+    if ($('#sumImg').getAttribute('src') !== src){ $('#sumImg').style.opacity = 0; $('#sumImg').src = src; $('#sumImg').onload = () => $('#sumImg').style.opacity = 1; }
+    $('#sumImg').alt = s.name;
+    $('#sumName').textContent = s.name;
+    $('#sumSub').textContent = s.type === 'yurt' ? `Glamping yurt · sleeps ${s.sleeps} · ${s.beds}` : s.type === 'venue' ? `Exclusive event venue · up to ${s.sleeps} guests` : `RV & tent site · sleeps ${s.sleeps} · up to ${s.max} ft`;
+  } else {
+    $('#sumImg').src = img('{T}/v1786467954/campground-photos/uecf7ch4g6gtlhva6clw.jpg', 900); $('#sumImg').alt = 'Hobson Meadows';
+    $('#sumName').textContent = 'Choose a stay'; $('#sumSub').innerHTML = 'Pick a yurt, site or the venue';
+  }
+  const ci = $('#checkin').value, co = $('#checkout').value;
+  const n = ci && co ? nightsBetween(ci, co) : 0;
+  $('#sumDates').textContent = ci && co && n > 0 ? `${fmt(ci)} to ${fmt(co)}` : 'Not set';
+  $('#sumNights').textContent = n > 0 ? n : 0;
+  $('#sumGuests').textContent = `${count.adults} adult${count.adults>1?'s':''}` + (count.children ? `, ${count.children} child${count.children>1?'ren':''}` : '') + (count.pets ? `, ${count.pets} pet${count.pets>1?'s':''}` : '');
+  return {s, guests, tooLong, n};
+}
+
+// quick hero form -> stays + prefill
+$('#quick').addEventListener('submit', e => {
+  e.preventDefault();
+  const t = $('#qType').value;
+  if ($('#qIn').value){ $('#checkin').value = $('#qIn').value; $('#checkout').value = $('#qOut').value || addDays($('#qIn').value,1); }
+  if (t === 'venue'){ siteSel.value = 'venue'; }
+  setTab(t); updateAll();
+  $('#stays').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+});
+
+$('#bookForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const {s, guests, tooLong, n} = updateAll();
+  const ci = $('#checkin').value;
+  const checks = [
+    ['#fSite', !!s],
+    ['#fIn', !!ci && ci >= T],
+    ['#fOut', n > 0],
+    ['#fName', $('#name').value.trim().length > 1],
+    ['#fEmail', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('#email').value.trim())]
+  ];
+  checks.forEach(([id, ok]) => $(id).classList.toggle('bad', !ok));
+  const firstBad = checks.find(c => !c[1]);
+  if (firstBad){ $(firstBad[0]).querySelector('input,select').focus(); return; }
+  if (guests > s.sleeps || tooLong){ (tooLong ? $('#rigLen') : $('#noteGuests')).scrollIntoView({block:'center'}); return; }
+
+  $('#bookForm').style.display = 'none';
+  $('#successText').innerHTML = `Thanks ${$('#name').value.trim().split(' ')[0]}! Your request for <b>${s.name}</b>, ${fmt(ci)} to ${fmt($('#checkout').value)} (${n} night${n>1?'s':''}), is on its way. Beth will email <b>${$('#email').value.trim()}</b> to confirm availability and your rate.`;
+  $('#success').classList.add('show');
+  $('#success').scrollIntoView({block:'center'});
+});
+$$('#bookForm input, #bookForm select').forEach(el => el.addEventListener('input', () => el.closest('.f')?.classList.remove('bad')));
+$('#again').onclick = () => { $('#bookForm').reset(); Object.assign(count,{adults:2,children:0,pets:0}); $('#success').classList.remove('show'); $('#bookForm').style.display=''; updateAll(); };
+updateAll();
+
+/* ---------- REVEAL ---------- */
+const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }), {threshold:.12});
+$$('.reveal').forEach(el => io.observe(el));
+$('#yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
